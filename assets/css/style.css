@@ -1,0 +1,41 @@
+
+body{
+  background-color: black;
+  color:#008eff;
+}
+.logo{
+  position: relative;
+  
+  font-size: 3em;
+  max-width: 70%;     
+  display: inline;
+  padding: 5px;
+}
+.mymenu{
+ padding: 3px; 
+ 
+
+}
+.navbar-default .navbar-nav>li>a:focus, .navbar-default .navbar-nav>li>a:hover {
+ color: white;
+}
+ .navbar{
+  background-color: black;
+  border-color: black;
+ 
+}
+.navbar-collapse{
+
+  float: right;
+
+}
+.navbar-header{
+
+  float: right;
+
+}
+ .navbar-default .navbar-nav>li>a {
+
+  color:#008eff;
+
+}
