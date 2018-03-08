@@ -1,5 +1,6 @@
 
 body{
+  min-height: 1000px;
   background-color: black;
   color:yellow;
   font-family: Anton, sans-serif;
@@ -30,25 +31,29 @@ body{
 
 }
 .mcimg{
+  
   border: solid black 5px;
   border-radius: 10%;
   font-size:1.1em;
   max-width: 45%;
 }
 .mcmovie{
+  
   max-width: 47%;
   max-height: 20%;
   /* display: block; */
 }
 #maincontrol{
+  
   max-width: 15%;
   min-width: 130px;
   float: left;
 }
 #maincontent{
-  position: fixed;
+  position: absolute;
+  transform: scale(0.7);
   z-index: -1;
-  top: 70px;
+  top: -12%;
   left:0;
   width:100%;
   float: right;
