@@ -5,6 +5,7 @@ body{
   color:yellow;
   font-family: Anton, sans-serif;
   font-size: 1.3em;
+  margin: 0 10px;
 }
 .logo{
   position: relative;
@@ -44,18 +45,7 @@ body{
   max-height: 20%;
   /* display: block; */
 }
-.gipRat{
-  position: relative;
-  left: -10vw;
-  top: 10vh;
-  font-size: 2em;
-  display: inline-block;
-  border-radius: 20%;
-  background-color: black;
-  padding:1px;
-  opacity: .8;
 
-}
 #maincontrol{
   z-index: 1;
   max-width: 15%;
@@ -119,8 +109,19 @@ body{
   float: right;
 }
 
-  
 
+.gipRat{
+  position: relative;
+  left: -11vw;
+  top: -7vh;
+  font-size: 2em;
+  display: inline-block;
+  border-radius: 20%;
+  background-color: black;
+  padding:1px;
+  opacity: .8;
+
+}
 .rowblock{
   display:block;
 
