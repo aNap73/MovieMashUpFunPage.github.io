@@ -1,5 +1,5 @@
 var mmufp={
-  defaults:['Monty Python and the Holy Grail','WarGames','Star Wars','Star Trek','Spaceballs','Caddyshack','Blade Runner','Alien: Covenant','Iron Man'], 
+  defaults:['Star Wars','Star Trek','Monty Python and the Holy Grail','Spaceballs','Idiocracy','Caddyshack','ZooLander','300','Transcendence','Iron Man'], 
   curMovie: "",
   antMovie: function (sTitle, sPlot, sPoster,sRating,indata){
     this.Title = sTitle;
