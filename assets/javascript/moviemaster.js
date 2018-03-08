@@ -1,4 +1,5 @@
 var mmufp={
+  defaults:['Monty Python and the Holy Grail','War Games','Star Wars','Star Trek','Spaceballs','Caddyshack','Blade Runner','Alien: Covenant','Iron Man'], 
   curMovie: "",
   antMovie: function (sTitle, sPlot, sPoster,sRating,indata){
     this.Title = sTitle;
@@ -49,12 +50,12 @@ var mmufp={
         mmufp.addMovie($("#addinput").val());
       };
     });
-    mmufp.addMovie('Star Wars');
-    mmufp.addMovie('Star Trek');    
-    mmufp.addMovie('The Matrix');    
-    mmufp.addMovie('Avatar');
-    mmufp.addMovie('Iron Man');
-    mmufp.ThemePage('Iron Man');   
+    let themelast = "";
+    mmufp.defaults.forEach(function(item,i){
+      mmufp.addMovie(item);
+      themelast = item;
+    })
+    mmufp.ThemePage(themelast);   
     },
     addMovie : function(SrchIn){
       $("#addinput").val("");
@@ -86,7 +87,8 @@ var mmufp={
     },    
     getGiffyCol1: function(inSrch){
       let col = [];
-      let mykey = "trilogy";
+      //let mykey = "trilogy";
+      let mykey = "d311e49e";
       $.ajax(
         {
           url: "https://www.omdbapi.com/?apikey=" + mykey + "&t=" + inSrch,
