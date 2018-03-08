@@ -87,7 +87,7 @@ var mmufp={
       let mykey = "trilogy";
       $.ajax(
         {
-          url: "http://www.omdbapi.com/?apikey=" + mykey + "&t=" + inSrch,
+          url: "https://www.omdbapi.com/?apikey=" + mykey + "&t=" + inSrch,
           method: "GET"
         }
       ).then(
