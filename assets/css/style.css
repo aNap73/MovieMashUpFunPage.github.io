@@ -2,7 +2,8 @@
 body{
   background-color: black;
   color:#fff;
-  font-size: .9em;
+  font-family: Anton, sans-serif;
+  font-size: 1.3em;
 }
 .logo{
   position: relative;
@@ -76,25 +77,27 @@ body{
    overflow: hidden;
  }
 .controltheme{
-   
-  border: 3px solid white;
-  background-color: blue;
+  background-color: black;
+  color: yellow;   
+  border: 1px solid white;
+  
   border-radius: 13%;
   padding: 5px;
   margin: 4px;
-  
+  opacity: .7;
 
   
 }
 .innercontrol{
-  background-color: darkblue;
+  background-color: blue;
+  color: yellow;
   padding: 1%;
   font-size: .8em;
   margin: 0;
-  
+  opacity: .9;
 }
 .controltheme:hover{
-  color: black;
+  color: yellow;
   background-color: rgb(172, 84, 231);
 }
 .ThemeMovie{
@@ -107,16 +110,21 @@ body{
   min-width: 10%;
   float: right;
 }
+
+  
+
 .rowblock{
   display:block;
-  
-}
 
+}
+.logo{
+  color:#000;
+}
 .navbar-default .navbar-nav>li>a:focus, .navbar-default .navbar-nav>li>a:hover {
- color: white;
+ color: #008eff;
 }
  .navbar{
-  background-color: black;
+  background-color: yellow;
   border-color: black;
  
 }
@@ -132,7 +140,7 @@ body{
 }
  .navbar-default .navbar-nav>li>a {
 
-  color:#008eff;
+  color:#000;
 
 }
 
@@ -140,18 +148,5 @@ body{
 body{
   font-size: .9em;
 }
-#maincontrol{
 
-}
-#maincontent{
-
-}
-
-.controltheme{
-
-}
-.ThemeMovie{
-  
-  
-}
 }

@@ -41,13 +41,20 @@ var mmufp={
     let newrow = $("<div class='row rowblock'><div class='col-3' id='maincontrol'><input id='addinput' class='antinput controltheme'><button id='addbutton' class='antbutton controltheme innercontrol'>Add</button><div id='maincontrolmenu'></div></div><div class='col-9 myrowcontent' id='maincontent'></div></div>");  
     $("#mmufpMainContain").empty();
     $("#mmufpMainContain").append($(newrow));
-    $('#addbutton').on('click',function(){   
-      mmufp.addMovie($("#addinput").val());
+    $('#addbutton').on('click',function(){
+      
+      mmufp.addMovie($("#addinput").val()); 
+        
+      
+
+  
     });
     $('#addinput').on('keydown',function(event){
       
       if (event.key==="Enter"){
+      
         mmufp.addMovie($("#addinput").val());
+      
       };
     });
     let themelast = "";
@@ -78,7 +85,9 @@ var mmufp={
             mmufp.ThemePage($(this).attr('data-giffy-title'));
           };                  
      
-        })},
+        })
+        
+      },
     colGiffys:[],    
     getGiffyCol: function(inSrch){
       let col = [];
@@ -122,7 +131,7 @@ var mmufp={
          let gkey = "aGpceXfwMY5TKtoH39N128oj2HirwBKv";
          let offset = Math.floor(Math.random()*125);    
          $.ajax({
-           url: "https://api.giphy.com/v1/gifs/search?api_key=" + gkey + "&q='" + mmufp.curMovie.Title + "'&offset=" + offset + "",
+           url: "https://api.giphy.com/v1/gifs/search?api_key=" + gkey + "&q='" + mmufp.curMovie.Title + "'&offset=" + offset + "&limit=15",
            method: "GET"
          }).then(function(response) {
            mmufp.colGiffys = [];
