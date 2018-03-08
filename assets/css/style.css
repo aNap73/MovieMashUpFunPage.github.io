@@ -31,7 +31,7 @@ body{
 
 }
 .mcimg{
-  transform:scale(0.8);
+  
   border: solid black 1px;
   border-radius: 10%;
   font-size:1.1em;
@@ -44,6 +44,18 @@ body{
   max-height: 20%;
   /* display: block; */
 }
+.gipRat{
+  position: relative;
+  top: 10vh;
+  left: -3%;
+  font-size: 2em;
+  display: inline-block;
+  border-radius: 20%;
+  background-color: black;
+  padding:2px;
+  opacity: .8;
+
+}
 #maincontrol{
   z-index: 1;
   max-width: 15%;
@@ -51,7 +63,7 @@ body{
   float: left;
 }
 #maincontent{
-  
+ 
 
 }
 #addinput{

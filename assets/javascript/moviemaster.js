@@ -160,12 +160,14 @@ var mmufp={
                myitem = item.Still; 
                
              }
-             let myimg = $("<img class='mcimg' src='" + myitem + "'/>");          
+             console.log(item.Rating);
+             let myimg = $("<img class='mcimg' src='" + myitem + "'/><div class='gipRat'>" + item.Rating +"<div/>");          
              myimg.attr('data-ani',item.Animated);
              myimg.attr('data-still',item.Still);
              myimg.attr('data-flag','still');
+
              myimg.on('click',function(event){
-               console.log('made it');
+               
                if($(this).attr('data-flag')==='still'){
                  $(this).attr('src',$(this).attr('data-ani'));
                  $(this).attr('data-flag','animated');
