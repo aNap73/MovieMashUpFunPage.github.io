@@ -1,6 +1,7 @@
 var mmufp={
   defaults:['Star Wars','Star Trek','Monty Python and the Holy Grail','Spaceballs','Idiocracy','Caddyshack','ZooLander','300','Transcendence','Iron Man'], 
   curMovie: "",
+  themelast: "",
   antMovie: function (sTitle, sPlot, sPoster,sRating,indata){
     this.Title = sTitle;
     this.Plot = sPlot;
@@ -16,6 +17,16 @@ var mmufp={
   },    
   antremovebutton: "",
   bPageAnimate: false,
+  bPageRatings: true,
+  ToggleRatings: function (){
+    mmufp.bPageRatings = (!mmufp.bPageRatings);
+    mmufp.ThemePage(mmufp.themelast);
+    if(mmufp.bPageRatings){
+      $("#RatLable").text('Ratings: (On)');
+    }else{
+      $("#RatLable").text('Ratings: (Off)');
+    }
+  },
   ToggleAnimation: function(){
     if(mmufp.bPageAnimate){
       //set all images off
@@ -57,12 +68,12 @@ var mmufp={
       
       };
     });
-    let themelast = "";
+    mmufp.themelast = "";
     mmufp.defaults.forEach(function(item,i){
       mmufp.addMovie(item);
-      themelast = item;
+      mmufp.themelast = item;
     })
-    mmufp.ThemePage(themelast);   
+    mmufp.ThemePage(mmufp.themelast);   
     },
     addMovie : function(SrchIn){
       $("#addinput").val("");
@@ -85,7 +96,8 @@ var mmufp={
             mmufp.ThemePage($(this).attr('data-giffy-title'));
           };                  
      
-        })
+        });
+        mmufp.ThemePage(SrchIn);
         
       },
     colGiffys:[],    
@@ -160,8 +172,12 @@ var mmufp={
                myitem = item.Still; 
                
              }
-             console.log(item.Rating);
-             let myimg = $("<img class='mcimg' src='" + myitem + "'/><div class='gipRat'>Rating: " + item.Rating +"<div/>");          
+             
+             let Rats = "<div class='gipRat'>Rating: " + item.Rating +"<div/>'";
+             if(!mmufp.bPageRatings){
+              Rats = "";
+             }
+             let myimg = $("<img class='mcimg' src='" + myitem + "'/>" + Rats);          
              myimg.attr('data-ani',item.Animated);
              myimg.attr('data-still',item.Still);
              myimg.attr('data-flag','still');
