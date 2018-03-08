@@ -1,10 +1,11 @@
 var mmufp={
   curMovie: "",
-  antMovie: function (sTitle, sPlot, sPoster,sRating){
+  antMovie: function (sTitle, sPlot, sPoster,sRating,indata){
     this.Title = sTitle;
     this.Plot = sPlot;
     this.Poster = sPoster;
     this.Rating = sRating;
+    this.Data = indata;
   },
   antGif: function(sStillImg, sAnimatedImg, sRating){
     this.Still = sStillImg;
@@ -50,7 +51,7 @@ var mmufp={
     });
     mmufp.addMovie('Star Wars');
     mmufp.addMovie('Star Trek');    
-    mmufp.addMovie('Matrix');    
+    mmufp.addMovie('The Matrix');    
     mmufp.addMovie('Avatar');
     mmufp.addMovie('Iron Man');
     mmufp.ThemePage('Iron Man');   
@@ -66,7 +67,8 @@ var mmufp={
      
         
       $("#maincontrolmenu").prepend(movie);
-      $(movie).on('click',function(event){          
+      $(movie).on('click',function(event){    
+             
           if($(event.target).attr('class').indexOf('RemoveMovie')>=0){
      
             $(this).remove();
@@ -92,8 +94,29 @@ var mmufp={
         }
       ).then(
         function (response) {
-         mmufp.curMovie = new mmufp.antMovie(response.Title, response.Poster, response,response.rated); 
-         $("#maincontent").empty();
+          $("#maincontent").empty();
+         mmufp.curMovie = new mmufp.antMovie(response.Title, response.Plot, response.Poster,response.rating,response); 
+         
+         let movieblurb = $("<div class='mcimg'>"); 
+         movieblurb.append($("<H2>" + mmufp.curMovie.Title + "</H2>"));
+         movieblurb.append($("<p>" + mmufp.curMovie.Plot + "</p>"));
+         movieblurb.append($("<p>Actors: " + mmufp.curMovie.Data.Actors + "</p>"));
+         movieblurb.append($("<p>Awards: " + mmufp.curMovie.Data.Awards + "</p>"));
+         movieblurb.append($("<p>Box Office: " + mmufp.curMovie.Data.BoxOffice + "</p>"));
+         movieblurb.append($("<p>Rated: " + mmufp.curMovie.Data.Rated + "</p>"));
+         movieblurb.css('background-image','url("'+ mmufp.curMovie.Poster +'")');
+         movieblurb.css('background-size','cover');
+         movieblurb.css('background-repeat','no-repeat');
+         
+         //movieblurb.css('height','160px');
+         movieblurb.css('width','80%');
+         
+         movieblurb.css('margin-left','20%');
+         movieblurb.css('padding','3%');
+         movieblurb.css('display','inline-block');
+         
+         movieblurb.css('text-shadow','1px 1px #000, -1px -1px #000, -1px 1px #000, 1px -1px #000, 2px 2px #000, -2px -2px #000, -2px 2px #000, 2px -2px #000');
+         //$("#mmufpMovieContain").attr('background-image',mmufp.curMovie.Poster);
          let gkey = "aGpceXfwMY5TKtoH39N128oj2HirwBKv";
          let offset = Math.floor(Math.random()*125);    
          $.ajax({
@@ -105,10 +128,14 @@ var mmufp={
              let rd = response.data[i];
              let gif = new mmufp.antGif(rd.images.fixed_height_still.url,
                rd.images.fixed_height.url,
-               rd.rating);        
+               rd.rating);
+               
+               
                mmufp.colGiffys.push(gif);            
+               
            }
            mmufp.colGiffys.forEach(function(item,i){
+             
              let myitem = "";
              if(mmufp.bPageAnimate){
                myitem = item.Animated; 
@@ -128,8 +155,15 @@ var mmufp={
                  $(this).attr('src',$(this).attr('data-still'));
                  $(this).attr('data-flag','still');
                }      
-             });          
-             $("#maincontent").append(myimg);
+             });
+             if(i===0){
+              $("#maincontent").append(movieblurb);
+             }else{
+              $("#maincontent").append(myimg);
+             }          
+               
+      
+             
            });       
          }); 
          }
@@ -137,7 +171,7 @@ var mmufp={
       
         
     },
-    ThemePage: function(inTheme){      
+    ThemePage: function(inTheme){            
       mmufp.getGiffyCol(inTheme);
     },  
 };
