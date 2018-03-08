@@ -46,13 +46,13 @@ body{
 }
 .gipRat{
   position: relative;
+  left: -10vw;
   top: 10vh;
-  left: -3%;
   font-size: 2em;
   display: inline-block;
   border-radius: 20%;
   background-color: black;
-  padding:2px;
+  padding:1px;
   opacity: .8;
 
 }
@@ -156,5 +156,10 @@ body{
 body{
   font-size: .9em;
 }
-
+.gipRat{
+  font-size: 1em;
+  left: -12vw;
+  top: 7vh;
+  
+}
 }

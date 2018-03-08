@@ -161,7 +161,7 @@ var mmufp={
                
              }
              console.log(item.Rating);
-             let myimg = $("<img class='mcimg' src='" + myitem + "'/><div class='gipRat'>" + item.Rating +"<div/>");          
+             let myimg = $("<img class='mcimg' src='" + myitem + "'/><div class='gipRat'>Rating: " + item.Rating +"<div/>");          
              myimg.attr('data-ani',item.Animated);
              myimg.attr('data-still',item.Still);
              myimg.attr('data-flag','still');
