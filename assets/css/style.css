@@ -1,7 +1,7 @@
 
 body{
   background-color: black;
-  color:#fff;
+  color:yellow;
   font-family: Anton, sans-serif;
   font-size: 1.3em;
 }
@@ -19,6 +19,16 @@ body{
  
 
 }
+.WeeHead{
+  height:30%;
+  width:20%;
+  display: inline-block;
+  padding: 0;
+  margin: 0;
+  border-radius: 80%;
+
+
+}
 .mcimg{
   border: solid black 5px;
   border-radius: 10%;
@@ -28,7 +38,7 @@ body{
 .mcmovie{
   max-width: 47%;
   max-height: 20%;
-  display: block;
+  /* display: block; */
 }
 #maincontrol{
   max-width: 15%;

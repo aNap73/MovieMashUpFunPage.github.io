@@ -107,7 +107,13 @@ var mmufp={
         function (response) {
           $("#maincontent").empty();
          mmufp.curMovie = new mmufp.antMovie(response.Title, response.Plot, response.Poster,response.rating,response); 
-         
+         let me = $("<img class='mcimg WeeHead' src='./assets/images/WeeAntMeHead.png'>"); 
+         //me.css('background-image',')');
+         //me.css('background-size','stretch');
+         //me.css('background-repeat','no-repeat');
+         //append($('<img class="WeeHead" src="./assets/images/WeeAntMeHead.png"/>'));
+         //me.attr('background-image','./assets/images/WeeAntMeHead.png');
+        
          let movieblurb = $("<div class='mcimg mcmovie'>"); 
          movieblurb.append($("<H2>" + mmufp.curMovie.Title + "</H2>"));
          movieblurb.append($("<p>" + mmufp.curMovie.Plot + "</p>"));
@@ -167,11 +173,19 @@ var mmufp={
                  $(this).attr('data-flag','still');
                }      
              });
-             if(i===1){
-              $("#maincontent").append(movieblurb);
-             }else{
-              $("#maincontent").append(myimg);
-             }          
+             
+             switch(i)
+             {
+               case 1:
+               $("#maincontent").append(movieblurb);
+               break;
+               case 4:
+               $("#maincontent").append(me);
+               break;
+               default:
+               $("#maincontent").append(myimg);
+             }
+                   
                
       
              
