@@ -99,7 +99,7 @@ var mmufp={
           $("#maincontent").empty();
          mmufp.curMovie = new mmufp.antMovie(response.Title, response.Plot, response.Poster,response.rating,response); 
          
-         let movieblurb = $("<div class='mcimg'>"); 
+         let movieblurb = $("<div class='mcimg mcmovie'>"); 
          movieblurb.append($("<H2>" + mmufp.curMovie.Title + "</H2>"));
          movieblurb.append($("<p>" + mmufp.curMovie.Plot + "</p>"));
          movieblurb.append($("<p>Actors: " + mmufp.curMovie.Data.Actors + "</p>"));
@@ -113,7 +113,7 @@ var mmufp={
          //movieblurb.css('height','160px');
          movieblurb.css('width','80%');
          
-         movieblurb.css('margin-left','20%');
+         //movieblurb.css('margin-left','20%');
          movieblurb.css('padding','3%');
          movieblurb.css('display','inline-block');
          
@@ -158,7 +158,7 @@ var mmufp={
                  $(this).attr('data-flag','still');
                }      
              });
-             if(i===0){
+             if(i===1){
               $("#maincontent").append(movieblurb);
              }else{
               $("#maincontent").append(myimg);
