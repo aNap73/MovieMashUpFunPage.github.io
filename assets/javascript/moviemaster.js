@@ -165,6 +165,7 @@ var mmufp={
              myimg.attr('data-still',item.Still);
              myimg.attr('data-flag','still');
              myimg.on('click',function(event){
+               console.log('made it');
                if($(this).attr('data-flag')==='still'){
                  $(this).attr('src',$(this).attr('data-ani'));
                  $(this).attr('data-flag','animated');
