@@ -177,7 +177,7 @@ var mmufp={
              
              switch(i)
              {
-               case 1:
+               case 0:
                $("#maincontent").append(movieblurb);
                break;
                case 4:
