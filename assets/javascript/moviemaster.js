@@ -180,7 +180,15 @@ var mmufp={
                $("#maincontent").append(movieblurb);
                break;
                case 4:
-               $("#maincontent").append(me);
+               {
+                let rnd = Math.random();
+                if(rnd > .65){
+                  $("#maincontent").append(me);  
+                }else{
+                  $("#maincontent").append(myimg)   
+                }  
+               }
+               
                break;
                default:
                $("#maincontent").append(myimg);
