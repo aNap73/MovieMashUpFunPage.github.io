@@ -28,19 +28,6 @@ var mmufp={
       $("#RatLable").text('Ratings: (Off)');
     }
   },
-  getMovie(MovieName){
-    $.ajax(
-      {
-        url: "https://www.youtube.com/results?search_query="  + MovieName,
-        method: "GET"
-      }
-    ).then(
-        function(response){
-          console.log(response);
-        }
-    );
-    let rqQuery = 'https://www.youtube.com/results?search_query=' + MovieName;
-  },
   ToggleAnimation: function(){
     if(mmufp.bPageAnimate){
       //set all images off
@@ -64,7 +51,7 @@ var mmufp={
     }
   },
    reset: function (){
-    mmufp.getMovie('Iron Man');     
+       
     let newrow = $("<div class='row rowblock'><div class='col-3' id='maincontrol'><input id='addinput' class='antinput controltheme'><button id='addbutton' class='antbutton controltheme innercontrol'>Add</button><div id='maincontrolmenu'></div></div><div class='col-9 myrowcontent' id='maincontent'></div></div>");  
     $("#mmufpMainContain").empty();
     $("#mmufpMainContain").append($(newrow));
