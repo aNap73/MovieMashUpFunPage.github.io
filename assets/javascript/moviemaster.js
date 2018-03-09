@@ -94,6 +94,7 @@ var mmufp={
           }
           else{            
             mmufp.ThemePage($(this).attr('data-giffy-title'));
+            mmufp.themelast=$(this).attr('data-giffy-title');
           };                  
      
         });
