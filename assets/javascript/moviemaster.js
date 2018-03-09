@@ -1,8 +1,19 @@
-
 var mmufp={
   defaults:['Star Wars','Star Trek','Monty Python and the Holy Grail','Spaceballs','Idiocracy','Caddyshack','ZooLander','300','Transcendence','Iron Man'], 
   curMovie: "",
   themelast: "",
+  getYouTube: function(MovieName){
+    $.ajax(
+      {
+        url: "'https://www.googleapis.com/youtube/v3/search?part=snippet&channelType=any&eventType=completed&forContentOwner=true&forDeveloper=true&forMine=true&maxResults=25&order=date&q=" + MovieName + "&key=AIzaSyBbuW16SZ_JjkovH83UJxh9xQ-Q9Psj5u0';",
+        method: "GET"
+      }
+    ).then(
+      function (response) {
+          console.log('The Kuhuna Says');
+          console.log(response);
+    
+  })},
   antMovie: function (sTitle, sPlot, sPoster,sRating,indata){
     this.Title = sTitle;
     this.Plot = sPlot;
@@ -51,10 +62,10 @@ var mmufp={
     }
   },
    reset: function (){
-       
-    let newrow = $("<div class='row rowblock'><div class='col-3' id='maincontrol'><input id='addinput' class='antinput controltheme'><button id='addbutton' class='antbutton controltheme innercontrol'>Add</button><div id='maincontrolmenu'></div></div><div class='col-9 myrowcontent' id='maincontent'></div></div>");  
-    $("#mmufpMainContain").empty();
-    $("#mmufpMainContain").append($(newrow));
+     let newrow = $("<div class='row rowblock'><div class='col-3' id='maincontrol'><input id='addinput' class='antinput controltheme'><button id='addbutton' class='antbutton controltheme innercontrol'>Add</button><div id='maincontrolmenu'></div></div><div class='col-9 myrowcontent' id='maincontent'></div></div>");
+     $("#mmufpMainContain").empty();
+     $("#mmufpMainContain").append($(newrow));
+
     $('#addbutton').on('click',function(){      
       mmufp.addMovie($("#addinput").val());      
       mmufp.ThemePage(mmufp.themelast);  
@@ -74,8 +85,9 @@ var mmufp={
     })
     
     mmufp.ThemePage(mmufp.themelast);
+  
     },
-    addMovie : function(SrchIn){
+    addMovie:function(SrchIn){
       
       //Do api calls and gather data here...
       //End api calls area
@@ -244,15 +256,12 @@ var mmufp={
            });       
          }); 
          }
-      ); 
-      
+      );       
           
     },
     ThemePage: function(inTheme){ 
-      if(inTheme.length < 1)
-    {inTheme="Iron Man"};           
-      mmufp.getGiffyCol(inTheme);
-      //mmufp.getMovies(inTheme);
+      if(inTheme.length < 1){inTheme="Iron Man"};           
+      mmufp.getGiffyCol(inTheme);     
     },  
 };
 $(document).ready(function(){{
