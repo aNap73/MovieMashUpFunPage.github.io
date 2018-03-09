@@ -49,6 +49,19 @@ var mmufp={
       mmufp.bPageAnimate = true;
     }
   },
+  getMovies: function(MovieName){
+    console.log("https://www.googleapis.com/youtube/v3/search?key='AIzaSyBbuW16SZ_JjkovH83UJxh9xQ-Q9Psj5u0'&maxResults=3&part='snippet'&q='" + MovieName + "'");
+     $.ajax(
+      {
+        url: "https://www.googleapis.com/youtube/v3/search?key=AIzaSyBbuW16SZ_JjkovH83UJxh9xQ-Q9Psj5u0&maxResults=3&type=''&part='snippet'&q='" + MovieName + "'",        
+        method: "GET"
+      }
+    ).then(
+      function (response) {
+        console.log(response);
+      }
+    )},
+  
   reset: function (){     
     let newrow = $("<div class='row rowblock'><div class='col-3' id='maincontrol'><input id='addinput' class='antinput controltheme'><button id='addbutton' class='antbutton controltheme innercontrol'>Add</button><div id='maincontrolmenu'></div></div><div class='col-9 myrowcontent' id='maincontent'></div></div>");  
     $("#mmufpMainContain").empty();
@@ -250,6 +263,7 @@ var mmufp={
       if(inTheme.length < 1)
     {inTheme="Iron Man"};           
       mmufp.getGiffyCol(inTheme);
+      mmufp.getMovies(inTheme);
     },  
 };
 $(document).ready(function(){{
