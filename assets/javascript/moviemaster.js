@@ -220,7 +220,7 @@ var mmufp={
                case 0:
                $("#maincontent").append(movieblurb);
                break;
-               case 5:
+               case 4:
                {
                 let rnd = Math.random();
                 //if(rnd > .65){
