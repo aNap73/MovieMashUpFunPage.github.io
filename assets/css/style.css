@@ -32,36 +32,35 @@ body{
 
 }
 .mcimg{
+  margin: 2%;
+  padding: 4%;
   position: relative;
   border: solid black 1px;
   border-radius: 10%;
   font-size:1.1em;
-  max-width: 45%;
+  display: inline-block;
   margin: 5px;
 }
 .gipRat{
   position: relative;
-  left: -11vw;
-  top: -7vh;
+  top: 60px;
+  left: -60px;
   font-size: 2em;
   display: inline-block;
   border-radius: 20%;
   background-color: black;
   padding:1px;
   opacity: .8;
+  z-index: 5;
 
 }
-.mcmovie{
-  
-  max-width: 47%;
-  max-height: 20%;
-  /* display: block; */
-}
+
 
 #maincontrol{
   z-index: 1;
   max-width: 15%;
   min-width: 130px;
+  margin: 1%;
   float: left;
 }
 #maincontent{
@@ -158,10 +157,15 @@ body{
 body{
   font-size: .9em;
 }
-.gipRat{
-  font-size: 1em;
-  left: -12vw;
-  top: 7vh;
+.mcmovie{
   
+  max-width: 40%;
+  max-height: 10%;
+  
+}
+
+
+.outtercontrol{
+  font-size: .7;
 }
 }

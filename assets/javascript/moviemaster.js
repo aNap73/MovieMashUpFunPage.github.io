@@ -30,18 +30,19 @@ var mmufp={
   ToggleAnimation: function(){
     if(mmufp.bPageAnimate){
       //set all images off
-  
-      $('.mcimg').each(function(i,item){
-       
-        $(item).attr('src',$(item).attr('data-still'));
+      
+      $('.giffy').each(function(i,item){
+        //$(item).attr('src',$(item).attr('data-still'));
+        $(item).css('background-image','url("'+ $(item).attr('data-still') +'")');
         $(item).attr('data-flag','still');
         $("#AniLable").text('Animation(Off)');
       });
       mmufp.bPageAnimate = false;
     }else{
      //set all images on
-     $('.mcimg').each(function(i,item){
-      $(item).attr('src',$(item).attr('data-ani'));
+     $('.giffy').each(function(i,item){
+      //$(item).attr('src',$(item).attr('data-ani'));
+      $(item).css('background-image','url("'+ $(item).attr('data-ani') +'")');
       $(item).attr('data-flag','animated');
       $("#AniLable").text('Animation(On)');
       });
@@ -52,31 +53,28 @@ var mmufp={
     let newrow = $("<div class='row rowblock'><div class='col-3' id='maincontrol'><input id='addinput' class='antinput controltheme'><button id='addbutton' class='antbutton controltheme innercontrol'>Add</button><div id='maincontrolmenu'></div></div><div class='col-9 myrowcontent' id='maincontent'></div></div>");  
     $("#mmufpMainContain").empty();
     $("#mmufpMainContain").append($(newrow));
-    $('#addbutton').on('click',function(){
-      
-      mmufp.addMovie($("#addinput").val()); 
-        
-      
-
-  
+    $('#addbutton').on('click',function(){      
+      mmufp.addMovie($("#addinput").val());      
+      mmufp.ThemePage(mmufp.themelast);  
     });
     $('#addinput').on('keydown',function(event){
       
       if (event.key==="Enter"){
       
         mmufp.addMovie($("#addinput").val());
-      
+        mmufp.ThemePage(mmufp.themelast);    
       };
     });
-    mmufp.themelast = "";
+    
     mmufp.defaults.forEach(function(item,i){
       mmufp.addMovie(item);
-      mmufp.themelast = item;
+      
     })
-    mmufp.ThemePage(mmufp.themelast);   
+    
+    mmufp.ThemePage(mmufp.themelast);
     },
     addMovie : function(SrchIn){
-      $("#addinput").val("");
+      
       //Do api calls and gather data here...
       //End api calls area
       let movie = $("<div class='rowblock'><div class='ThemeMovie controltheme'>" + SrchIn + "<button class='RemoveMovie controltheme innercontrol'>Delete</button></div></div>");
@@ -93,12 +91,15 @@ var mmufp={
             $(this).remove();
           }
           else{            
-            mmufp.ThemePage($(this).attr('data-giffy-title'));
+            
             mmufp.themelast=$(this).attr('data-giffy-title');
+            mmufp.ThemePage(mmufp.themelast);
           };                  
      
         });
-        mmufp.ThemePage(SrchIn);
+        mmufp.themelast = $("#addinput").val();
+        $("#addinput").val("");
+        
         
       },
     colGiffys:[],    
@@ -174,22 +175,38 @@ var mmufp={
                
              }
              
-             let Rats = "<div class='gipRat'>Rating: " + item.Rating +"<div/>'";
+             
+             let Rats = "Rated: " + item.Rating;
+             //let Rats = "<div class='gipRat'>Rating: " + item.Rating +"<div/>'";
              if(!mmufp.bPageRatings){
-              Rats = "";
+              Rats ="";
              }
-             let myimg = $("<img class='mcimg' src='" + myitem + "'/>" + Rats);          
+             //let myimg = $("<img class='mcimg giffy' src='" + myitem + "'/>" + Rats);
+             let myimg = $("<div class='mcimg giffy'>");          
+             //let myimg = $("<img class='mcimg giffy' src='" + myitem + "'/>" + Rats);
              myimg.attr('data-ani',item.Animated);
              myimg.attr('data-still',item.Still);
              myimg.attr('data-flag','still');
+             if(Rats.length>0){
+                myimg.append($("<p class='gipRat'>").text(Rats));
+                myimg.css('padding','4%');
+                }else{
+                  myimg.css('padding','8%');     
+                };
+             myimg.css('background-image','url("'+ myitem +'")');
+             myimg.css('background-size','cover');
+             myimg.css('background-repeat','no-repeat');
 
              myimg.on('click',function(event){
                
                if($(this).attr('data-flag')==='still'){
-                 $(this).attr('src',$(this).attr('data-ani'));
+                 
+                 //$(this).attr('src',$(this).attr('data-ani'));
+                 $(this).css('background-image','url("'+ $(this).attr('data-ani') +'")');
                  $(this).attr('data-flag','animated');
                }else{
-                 $(this).attr('src',$(this).attr('data-still'));
+                 //$(this).attr('src',$(this).attr('data-still'));
+                 $(this).css('background-image','url("'+ $(this).attr('data-still') +'")');
                  $(this).attr('data-flag','still');
                }      
              });
@@ -224,7 +241,9 @@ var mmufp={
       
           
     },
-    ThemePage: function(inTheme){            
+    ThemePage: function(inTheme){ 
+      if(inTheme.length < 1)
+    {inTheme="Iron Man"};           
       mmufp.getGiffyCol(inTheme);
     },  
 };
