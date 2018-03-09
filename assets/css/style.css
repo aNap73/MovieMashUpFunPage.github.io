@@ -36,6 +36,8 @@ body{
 }
 
 .mcimg{
+  max-width: 15%;
+  min-width: 100px;
   margin: 2%;
   padding:9%;
   position: relative;
@@ -46,8 +48,11 @@ body{
   margin: 5px;
 }
 .mcmovie{
-  max-width: 78%;
-  min-width: 10%;  
+  margin: 2%;
+  max-width: 35%;
+  min-width: 10%;
+  max-height: 15%;
+  min-height: 10%;  
 }
 .gipRat{
   position: absolute;
