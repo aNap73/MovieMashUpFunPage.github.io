@@ -121,12 +121,18 @@ var mmufp={
         function (response) {
           $("#maincontent").empty();
          mmufp.curMovie = new mmufp.antMovie(response.Title, response.Plot, response.Poster,response.rating,response); 
-         let me = $("<img class='mcimg WeeHead' src='./assets/images/WeeAntMeHead.png'>"); 
-         //me.css('background-image',')');
-         //me.css('background-size','stretch');
-         //me.css('background-repeat','no-repeat');
-         //append($('<img class="WeeHead" src="./assets/images/WeeAntMeHead.png"/>'));
-         //me.attr('background-image','./assets/images/WeeAntMeHead.png');
+         
+         let me = $("<div class='mcimg giffy WeeHead'>");          
+         
+         me.attr('data-ani','./assets/images/WeeAntMeHead.png');
+         me.attr('data-still','./assets/images/WeeAntMeHead.png');
+         me.attr('data-flag','still');
+         me.css('background-image','url("./assets/images/WeeAntMeHead.png")');
+         me.css('background-size','cover');
+         me.css('background-repeat','no-repeat');
+         
+         me.append($("<p class='Mycc gipRat'>").text('©2018 A.Nap'));
+         
         
          let movieblurb = $("<div class='mcimg mcmovie'>"); 
          movieblurb.append($("<H2>" + mmufp.curMovie.Title + "</H2>"));
@@ -189,9 +195,7 @@ var mmufp={
              myimg.attr('data-flag','still');
              if(Rats.length>0){
                 myimg.append($("<p class='gipRat'>").text(Rats));
-                myimg.css('padding','4%');
-                }else{
-                  myimg.css('padding','8%');     
+                     
                 };
              myimg.css('background-image','url("'+ myitem +'")');
              myimg.css('background-size','cover');
@@ -216,10 +220,11 @@ var mmufp={
                case 0:
                $("#maincontent").append(movieblurb);
                break;
-               case 4:
+               case 5:
                {
                 let rnd = Math.random();
-                if(rnd > .65){
+                //if(rnd > .65){
+                if(1===1){
                   $("#maincontent").append(me);  
                 }else{
                   $("#maincontent").append(myimg)   

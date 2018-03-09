@@ -21,40 +21,6 @@ body{
  
 
 }
-.WeeHead{
-  height:30%;
-  width:20%;
-  display: inline-block;
-  padding: 0;
-  margin: 0;
-  border-radius: 80%;
-
-
-}
-.mcimg{
-  margin: 2%;
-  padding: 4%;
-  position: relative;
-  border: solid black 1px;
-  border-radius: 10%;
-  font-size:1.1em;
-  display: inline-block;
-  margin: 5px;
-}
-.gipRat{
-  position: relative;
-  top: 60px;
-  left: -60px;
-  font-size: 2em;
-  display: inline-block;
-  border-radius: 20%;
-  background-color: black;
-  padding:1px;
-  opacity: .8;
-  z-index: 5;
-
-}
-
 
 #maincontrol{
   z-index: 1;
@@ -64,9 +30,47 @@ body{
   float: left;
 }
 #maincontent{
- 
-
+  max-width: 100%;
+  min-width: 130px;
+  display: inline;
 }
+
+.mcimg{
+  margin: 2%;
+  padding:9%;
+  position: relative;
+  border: solid black 1px;
+  border-radius: 10%;
+  font-size:1.1em;
+  display: inline-block;
+  margin: 5px;
+}
+.mcmovie{
+  max-width: 78%;
+  min-width: 10%;  
+}
+.gipRat{
+  position: absolute;
+  top: 80%;
+  left: 10%;
+  font-size: 1.4em;
+  display: inline-block;
+  border-radius: 20%;
+  background-color: black;
+  padding:1px;
+  opacity: .8;
+  z-index: 5;
+}
+.Mycc{
+  
+  
+}
+.WeeHead{
+  height:30%;
+  width:10%;
+  
+}
+
 #addinput{
   width: 65%;
   min-width: 30px;
@@ -110,8 +114,9 @@ body{
   background-color: rgb(172, 84, 231);
 }
 .ThemeMovie{
-  min-width: 50%; 
+  min-width: 45%; 
   width:100%;
+  
 }
 .RemoveMovie{
   padding: 0;
@@ -158,14 +163,6 @@ body{
   font-size: .9em;
 }
 .mcmovie{
-  
   max-width: 40%;
-  max-height: 10%;
-  
-}
-
-
-.outtercontrol{
-  font-size: .7;
-}
-}
+  min-width: 10%;  
+}}
