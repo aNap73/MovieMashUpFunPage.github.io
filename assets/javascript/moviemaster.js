@@ -145,9 +145,10 @@ var mmufp={
          me.css('background-size','cover');
          me.css('background-repeat','no-repeat');
          
-         me.append($("<p class='Mycc gipRat'>").text('©2018 A.Nap'));
+         me.append($("<p class='Mycc gipRat'>").text("Ant's Movie Mash Up ©2018 Anthony Napolitano"));
          
         
+         //let movieblurb = $("<div class='mcimg mcmovie'>");
          let movieblurb = $("<div class='mcimg mcmovie'>"); 
          movieblurb.append($("<H2>" + mmufp.curMovie.Title + "</H2>"));
          movieblurb.append($("<p>" + mmufp.curMovie.Plot + "</p>"));
@@ -160,7 +161,7 @@ var mmufp={
          movieblurb.css('background-repeat','no-repeat');
          
          //movieblurb.css('height','160px');
-         movieblurb.css('width','80%');
+         //movieblurb.css('width','45%');
          
          //movieblurb.css('margin-left','20%');
          movieblurb.css('padding','3%');
@@ -233,6 +234,7 @@ var mmufp={
              {
                case 0:
                $("#maincontent").append(movieblurb);
+               
                break;
                case 6:
                {

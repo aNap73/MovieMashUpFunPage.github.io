@@ -36,24 +36,27 @@ body{
 }
 
 .mcimg{
-  max-width: 15%;
+  max-width: 14%;
   min-width: 100px;
   margin: 2%;
-  padding:9%;
+  padding:9% 10%;
   position: relative;
   border: solid black 1px;
   border-radius: 10%;
   font-size:1.1em;
   display: inline-block;
   margin: 5px;
+ 
+
+  
 }
 .mcmovie{
-  margin: 2%;
-  max-width: 35%;
-  min-width: 10%;
-  max-height: 15%;
-  min-height: 10%;  
+
+  max-width:35%;
+  padding:1% 30%;
+    
 }
+
 .gipRat{
   position: absolute;
   top: 80%;
