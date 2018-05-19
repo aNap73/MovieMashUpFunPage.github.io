@@ -114,7 +114,7 @@ var mmufp={
       let col = [];
       $.ajax(
         {
-          url: "/api/getOB/?title=" + inSrch,
+          url: "https://radiant-beach-90288.herokuapp.com/api/getOB/?title=" + inSrch,
           method: "GET"
         }
       ).then(
@@ -159,7 +159,7 @@ var mmufp={
                  
          
         $.ajax({
-           url: "/api/getGF/?title='" + mmufp.curMovie.Title + "'",
+           url: "https://radiant-beach-90288.herokuapp.com/api/getGF/?title='" + mmufp.curMovie.Title + "'",
            method: "GET"
          }).then(function(response) {
            response = JSON.parse(response);
