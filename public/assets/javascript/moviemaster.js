@@ -112,15 +112,14 @@ var mmufp={
     },    
     getGiffyCol1: function(inSrch){
       let col = [];
-      //let mykey = "trilogy";
-      let mykey = "d311e49e";
       $.ajax(
         {
-          url: "https://www.omdbapi.com/?apikey=" + mykey + "&t=" + inSrch,
+          url: "/api/getOB/?title=" + inSrch,
           method: "GET"
         }
       ).then(
         function (response) {
+          response = JSON.parse(response);        
           $("#maincontent").empty();
          mmufp.curMovie = new mmufp.antMovie(response.Title, response.Plot, response.Poster,response.rating,response); 
          
@@ -157,23 +156,22 @@ var mmufp={
          
          movieblurb.css('text-shadow','1px 1px #000, -1px -1px #000, -1px 1px #000, 1px -1px #000, 2px 2px #000, -2px -2px #000, -2px 2px #000, 2px -2px #000');
          //$("#mmufpMovieContain").attr('background-image',mmufp.curMovie.Poster);
-         let gkey = "aGpceXfwMY5TKtoH39N128oj2HirwBKv";
-         let offset = Math.floor(Math.random()*125);    
-         $.ajax({
-           url: "https://api.giphy.com/v1/gifs/search?rating=pg-13&api_key=" + gkey + "&q='" + mmufp.curMovie.Title + "'&offset=" + offset + "&limit=15",
+                 
+         
+        $.ajax({
+           url: "/api/getGF/?title='" + mmufp.curMovie.Title + "'",
            method: "GET"
          }).then(function(response) {
+           response = JSON.parse(response);
            mmufp.colGiffys = [];
            for(i=0;i<response.data.length;i++){
              let rd = response.data[i];
              let gif = new mmufp.antGif(rd.images.fixed_height_still.url,
                rd.images.fixed_height.url,
                rd.rating);
-               
-               
-               mmufp.colGiffys.push(gif);            
-               
-           }
+            mmufp.colGiffys.push(gif);            
+        }
+
            mmufp.colGiffys.forEach(function(item,i){
              
              let myitem = "";

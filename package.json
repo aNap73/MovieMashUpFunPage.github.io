@@ -1,0 +1,26 @@
+{
+  "name": "moviemashupfunpage.github.io",
+  "version": "1.0.0",
+  "description": "[Check Out the Site Here](https://anap73.github.io/MovieMashUpFunPage.github.io/)",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/aNap73/MovieMashUpFunPage.github.io.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/aNap73/MovieMashUpFunPage.github.io/issues"
+  },
+  "homepage": "https://github.com/aNap73/MovieMashUpFunPage.github.io#readme",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "dotenv": "^5.0.1",
+    "express": "^4.16.3",
+    "request": "^2.86.0"
+  }
+}
