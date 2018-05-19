@@ -1,7 +1,10 @@
 # MovieMashUpFunPage.github.io
+[Check Out the Site Here](https://anap73.github.io/MovieMashUpFunPage.github.io/)
 It's a gify project ...  yea it is.. ;)
 
 Homework 6 is GO!
+
+![MoviesGiffiesOMy](https://raw.githubusercontent.com/aNap73/MovieMashUpFunPage.github.io/master/assets/images/movie.gif)
 
 Requirements:
 

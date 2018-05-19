@@ -2,18 +2,6 @@ var mmufp={
   defaults:['Star Wars','Star Trek','Monty Python and the Holy Grail','Spaceballs','Idiocracy','Caddyshack','ZooLander','300','Transcendence','Iron Man'], 
   curMovie: "",
   themelast: "",
-  getYouTube: function(MovieName){
-    $.ajax(
-      {
-        url: "'https://www.googleapis.com/youtube/v3/search?part=snippet&channelType=any&eventType=completed&forContentOwner=true&forDeveloper=true&forMine=true&maxResults=25&order=date&q=" + MovieName + "&key=AIzaSyBbuW16SZ_JjkovH83UJxh9xQ-Q9Psj5u0';",
-        method: "GET"
-      }
-    ).then(
-      function (response) {
-          console.log('The Kuhuna Says');
-          console.log(response);
-    
-  })},
   antMovie: function (sTitle, sPlot, sPoster,sRating,indata){
     this.Title = sTitle;
     this.Plot = sPlot;
@@ -172,7 +160,7 @@ var mmufp={
          let gkey = "aGpceXfwMY5TKtoH39N128oj2HirwBKv";
          let offset = Math.floor(Math.random()*125);    
          $.ajax({
-           url: "https://api.giphy.com/v1/gifs/search?api_key=" + gkey + "&q='" + mmufp.curMovie.Title + "'&offset=" + offset + "&limit=15",
+           url: "https://api.giphy.com/v1/gifs/search?rating=pg-13&api_key=" + gkey + "&q='" + mmufp.curMovie.Title + "'&offset=" + offset + "&limit=15",
            method: "GET"
          }).then(function(response) {
            mmufp.colGiffys = [];
