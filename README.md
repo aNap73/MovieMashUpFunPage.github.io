@@ -4,7 +4,7 @@ It's a gify project ...  yea it is.. ;)
 
 Homework 6 is GO!
 
-![MoviesGiffiesOMy](https://raw.githubusercontent.com/aNap73/MovieMashUpFunPage.github.io/master/assets/images/movie.gif)
+![MoviesGiffiesOMy](https://raw.githubusercontent.com/aNap73/MovieMashUpFunPage.github.io/blob/master/assets/images/Movie.gif)
 
 Requirements:
 
