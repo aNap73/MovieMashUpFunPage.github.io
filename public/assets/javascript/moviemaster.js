@@ -1,5 +1,6 @@
+//SAFE MOVIEMASTER
 var mmufp={
-  defaults:['Star Wars','Star Trek','Monty Python and the Holy Grail','Spaceballs','Idiocracy','Caddyshack','ZooLander','300','Transcendence','Iron Man'], 
+    defaults:['Star Wars','Star Trek','Monty Python and the Holy Grail','Spaceballs','Idiocracy','Caddyshack','ZooLander','300','Transcendence','Iron Man'], 
   curMovie: "",
   themelast: "",
   antMovie: function (sTitle, sPlot, sPoster,sRating,indata){
