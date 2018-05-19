@@ -1,6 +1,6 @@
 # MovieMashUpFunPage.github.io
 ### written by Anthony Napolitano
-[Check Out the Site Here](https://anap73.github.io/MovieMashUpFunPage.github.io/)
+[Check Out the Site Here](https://radiant-beach-90288.herokuapp.com/)
 
 It's a gify project ...  yea it is.. ;)
 
@@ -19,3 +19,9 @@ Accept only Movies. Theme is Movies.
 Validate with OMDB. Use OMDB to enforce theme on user selection.
 Control animations by individual clicks.
 Control all animations at once.
+
+###Project Update...
+
+Google was nice enough to remind me that the api keys in this project were exposed.
+I put the whole ap up in Heroku, minor changes and now the api keys should be safe there. 
+Yikes... :D
