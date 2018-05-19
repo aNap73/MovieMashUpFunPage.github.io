@@ -6,31 +6,14 @@ Homework 6 is GO!
 
 ![MoviesGiffiesOMy](https://github.com/aNap73/MovieMashUpFunPage.github.io/blob/master/assets/images/Movie.gif)
 
-Requirements:
 
-#Gify Page Load:
-Load page of animated gifs (10) non-a)nimated
-on click of buttons of which some buttons pre-exist. 
-
-#gif stills animate on click
-#gifs have giffy Rating on them.
-
-#add buttons 
-button add search to array with functionality
-of gify page load.
-
-#Mix up
-
-Accept only Movies.
-validate with OMDB.
-get giffy collection1 from OMDB valid title search.
-get giffy collection2 from mindcloud.getkeys(OMDB valid plot).
-var colgifs = concatinate (fnCol(collection1,5), fnCol(collection2,5))
-where fnCol is some function returning (col,n) n-random gif-data from array.
-html.apply(colgifs) .class-ToggleMonkey
+#Gify Movie Page:
+On Load the page loads (10) giffies based on the movie button selected.
+You can select from the preloaded movies, or add your own easily.
  
-Gify make background to spec. 
-Add Movie Info and Poster to center of display div.
+#Project Mix up, Adds, Theme
 
-Make button out of Movie Poster with rating of movie
-
+Accept only Movies. Theme is Movies.
+Validate with OMDB. Use OMDB to enforce theme on user selection.
+Control animations by individual clicks.
+Control all animations at once.
