@@ -6,8 +6,7 @@ It's a gify project ...  yea it is.. ;)
 
 Homework 6 is GO!
 
-![MoviesGiffiesOMy](https://github.com/aNap73/MovieMashUpFunPage.github.io/blob/master/public/assets/images/Movie.gif)
-
+![MoviesGiffiesOMy](./public/assets/images/Movie.gif)
 
 ### Gify Movie Page:
 On Load the page loads (10) giffies based on the movie button selected.
