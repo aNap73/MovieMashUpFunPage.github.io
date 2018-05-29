@@ -1,9 +1,10 @@
 var express = require("express");
 var router = express.Router();
 var request = require("request");
+var cors = require("cors");
 require('dotenv').config();
 
-router.get('/api/getGF',function(req,res){
+router.get('/api/getGF',cors(),function(req,res,next){
    if(!req.query.title){
     res.json({});
     return;
@@ -19,7 +20,7 @@ router.get('/api/getGF',function(req,res){
               });
 });
 
-router.get('/api/getOB',function(req,res){
+router.get('/api/getOB',cors(),function(req,res,next){
   if(!req.query.title){
     res.json({});
     return;
